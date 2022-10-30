@@ -1,5 +1,7 @@
 <?php 
   require("../functions/brand_functions.php");
+  require("../functions/category_functions.php");
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -21,16 +23,17 @@
 
   <!-- Button trigger modal -->
   <?php 
-
   
-     echo AdminButtons();
+      echo AdminButtons();
 
       display_brands();
+
+      display_category();
     
   ?>
  
 
-  <!-- Modal -->
+  <!-- Modal Brand-->
   <div class="modal fade" id="addProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -57,6 +60,33 @@
     </div>
   </div>
 
+
+    <!-- Modal Category-->
+    <div class="modal fade" id="addCategory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add A Product Category</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="../actions/add_category.php" method="get">
+            <h3>Add A Product Category</h3>
+            <div class="col-md-6 mb-3">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="category_name" id="lname" placeholder="Brand Name">
+                <label for="lname">Category Name</label>
+              </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" name = "add_category" class="btn btn-success">Add Category</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

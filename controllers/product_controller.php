@@ -17,6 +17,21 @@
         return $product->selectAllBrands();
     }
 
+    function addProductCategory($category_name){
+        $product = new Product;
+        return $product->addProductCategory($category_name);
+    }
+
+    function selectAllCategory(){
+        $product = new Product;
+        return $product->selectAllCategory();
+    }
+
+    function editCategory($category_id, $new_category_name){
+        $product = new Product;
+        return $product->editCategory($category_id, $new_category_name);
+    }
+
  
  
 ?>

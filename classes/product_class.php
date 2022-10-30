@@ -32,6 +32,16 @@
             return $this->db_fetch_all($sql);
         }
 
+        function selectAllCategory(){
+            $sql = "SELECT * FROM categories";
+            return $this->db_fetch_all($sql);
+        }
+
+        function editCategory($category_id, $new_category_name){
+            $sql = "UPDATE `categories` SET `cat_name`='$new_category_name' WHERE `cat_id`='$category_id'";
+            return $this->db_query($sql);
+        }
+
         
     }
 
