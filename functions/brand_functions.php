@@ -28,11 +28,23 @@
         foreach($brands as $brand){
             $brand_id = $brand['brand_id'];
             $brand_name = $brand['brand_name'];
+
             display_row($brand_id, $brand_name);
         }
     }
 
     function display_row($brand_id, $brand_name){
         echo "<tr>$brand_name</tr><tr><a class='btn btn-primary mb-3' href='../view/edit_brand.php?brand_id=$brand_id&brand_name=$brand_name' role='button'>Edit Brand</a></tr><br>";
+    }
+
+    function brand_dropdown(){
+        $brands = selectAllBrands();
+        echo "<h4>Brand Names</h4>";
+        foreach($brands as $brand){
+            $brand_id = $brand['brand_id'];
+            $brand_name = $brand['brand_name'];
+
+            echo "<option value = '$brand_id'>$brand_name</option>";
+        }
     }
 ?>
