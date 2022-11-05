@@ -1,6 +1,7 @@
 <?php 
   require("../functions/brand_functions.php");
   require("../functions/category_functions.php");
+  require("../functions/product_function.php");
 
 ?>
 <!doctype html>
@@ -25,10 +26,14 @@
   <?php 
   
       echo AdminButtons();
+      
+      display_add_product_btn();
 
       display_brands();
 
       display_category();
+
+      
     
   ?>
  

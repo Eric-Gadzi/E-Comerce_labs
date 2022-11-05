@@ -42,6 +42,11 @@
             return $this->db_query($sql);
         }
 
+        function selectAllProducts(){
+            $sql = "SELECT products.product_id, product_title, product_price, product_desc, product_image, product_keywords,categories.cat_name, brands.brand_name, categories.cat_id, brands.brand_id FROM `products`, categories, brands WHERE products.product_cat = categories.cat_id and products.product_brand = brands.brand_id";
+            return $this->db_fetch_all($sql);
+        }
+
         
     }
 

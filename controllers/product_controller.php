@@ -41,6 +41,12 @@
         return $product->addProduct($category_id, $brand_id, $product_title, $product_price, $product_desc, $product_image, $product_keywords);
     }
 
+    function selectAllProducts(){
+        $product = new Product;
+
+        return $product->selectAllProducts();
+    }
+
  
  
 ?>
