@@ -1,3 +1,6 @@
+<?php
+    require_once("../functions/product_function.php");
+?>
 <!doctype html>
 <html lang="en">
 
@@ -33,17 +36,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Product Name</td>
-                <td>Description</td>
-                <td>Price</td>
-                <th>Category</th>
-                <td>Brand</td>
-                <th><a href="#" class="btn btn-primary btn-sm active" role="button" aria-pressed="true"><i class="bi bi-pencil-square"></i><span>Edit</span></a></th>
-                <th><a href="#" class="btn btn-danger btn-sm active" role="button" aria-pressed="true"><i class="bi bi-trash-fill"></i>Delete </a></th>
-               
-            </tr>
+            
+            <?php selectAllProducts_table(); ?>;
          
         </tbody>
     </table>
