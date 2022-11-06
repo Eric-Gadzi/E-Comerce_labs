@@ -53,6 +53,12 @@
         return $product->updateAProduct($category_id, $brand_id, $product_title, $product_price, $product_desc, $product_image, $product_keywords, $product_id);
     }
 
+    function delete_product($product_id){
+        $product = new Product;
+
+        return $product->delete_product($product_id);
+    }
+
  
  
 ?>

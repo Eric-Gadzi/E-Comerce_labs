@@ -1,6 +1,7 @@
 <?php 
     require_once("../admin/brand.php");
     require_once("../controllers/product_controller.php");
+    require_once("../admin/login.php");
     
     function AdminButtons(){
         if(checkUserPrivileges()){
@@ -43,6 +44,22 @@
         foreach($brands as $brand){
             $brand_id = $brand['brand_id'];
             $brand_name = $brand['brand_name'];
+
+            echo "<option value = '$brand_id'>$brand_name</option>";
+        }
+    }
+
+    function brand_dropdown_selected($value){
+        $brands = selectAllBrands();
+        echo "<h4>Brand Names</h4>";
+        foreach($brands as $brand){
+            $brand_id = $brand['brand_id'];
+            $brand_name = $brand['brand_name'];
+
+            if($brand_id == $value){
+                echo "<option value = '$brand_id' selected>$brand_name</option>";
+                continue;
+            }
 
             echo "<option value = '$brand_id'>$brand_name</option>";
         }

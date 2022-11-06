@@ -21,7 +21,7 @@ require_once("../functions/category_functions.php");
 
 <body>
     <h1>All Products</h1>
-
+    <button type="submit" name="add_product" class="btn btn-primary" onclick="window.location.href= '../View/index.php';">Back To Home</button>
     <!-- Optional JavaScript; choose one of the two! -->
     <table class="table">
         <thead>
@@ -39,7 +39,7 @@ require_once("../functions/category_functions.php");
         </thead>
         <tbody>
 
-            <?php selectAllProducts_table(); ?>;
+            <?php selectAllProducts_table(); ?>
 
         </tbody>
     </table>
@@ -49,7 +49,7 @@ require_once("../functions/category_functions.php");
 
 
     <!-- Modal -->
-    <div class="modal fade" id="edit_product" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -59,54 +59,41 @@ require_once("../functions/category_functions.php");
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="../actions/add_product.php" method="GET">
-                        <div class="mb-3">
-                            <label for="product_name" class="form-label">Product Name</label>
-                            <input type="text" class="form-control" name="product_name" id="product_name" value="<?php echo $_GET['name'] ?>" aria-describedby="emailHelp" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="product_description" class="form-label">Product Description</label>
-                            <input type="text" class="form-control" name="product_description" id="product_description" aria-describedby="emailHelp"
-                            value="<?php echo $_GET['description'];?>" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="product_keywords" class="form-label">Product Keywords</label>
-                            <input type="text" class="form-control" name="product_keywords" id="product_keywords" aria-describedby="emailHelp" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="price" class="form-label">Price</label>
-                            <input type="number" class="form-control" name="price" id="price" aria-describedby="emailHelp" required>
-                        </div>
-
-                        <div class="input-group mb-3">
-                            <label class="input-group-text" name="category" for="product_category">Product Category</label>
-                            <select class="form-select" name="category" id="product_category" required>
-                                <option selected>Choose Category..</option>
-                                <!-- <option value="1">One</option> -->
-                                <?php category_dropDown(); ?>
-
-                            </select>
-                        </div>
-
-                        <div class="input-group mb-3">
-                            <label class="input-group-text" for="product_brand">Product Brand</label>
-                            <select class="form-select" name="brand" id="product_brand" required>
-                                <option selected>Choose Brand..</option>
-                                <?php brand_dropdown(); ?>
-                            </select>
-                        </div>
-
-                        <button type="submit" name="add_product" class="btn btn-primary" onclick="ajax()">Submit</button>
-                    </form>
-
+                    <i class="bi bi-check-circle-fill bi-align-center icon-large" style="font-size:1000%;color:green;"></i>
                 </div>
-
-                <!-- <div class="modal-footer"> -->
-                <!-- <button type="button" class="btn btn-success" data-bs-dismiss="modal">Ok</button>
-                </div> -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Ok</button>
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+        function ajax(value) {
+      
+            event.preventDefault();
+
+            var url = value;
+
+            var xhttp = new XMLHttpRequest();
+
+
+            xhttp.onload = function() {
+                var result = this.responseText;
+          
+                if (result === 'success') {
+
+                    alert("Product Delete successfully");
+                    location.reload(true);
+                } else {
+                    alert("could not delete data");
+                }
+            };
+            xhttp.open("GET", `${url}`, true);
+            xhttp.send();
+        }
+    </script>
+
 </body>
 
 </html>

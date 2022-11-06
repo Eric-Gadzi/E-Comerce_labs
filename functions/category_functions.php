@@ -33,6 +33,20 @@
                 echo "<option value = '$category_id'>$category_name</option>";
             }
         }
+
+        function category_dropDown_selected($value){
+            $category_list = selectAllCategory();
+      
+            foreach($category_list as $category){
+                $category_id = $category['cat_id'];
+                $category_name = $category['cat_name'];
+                if($category_id == $value){
+                 echo "<option value = '$category_id' selected>$category_name</option>";
+                 continue;
+                }
+                echo "<option value = '$category_id'>$category_name</option>";
+            }
+        }
         
 
 ?>

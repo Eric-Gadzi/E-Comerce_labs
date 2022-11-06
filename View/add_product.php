@@ -1,6 +1,7 @@
 <?php
 include("../functions/brand_functions.php");
 include("../functions/category_functions.php");
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -88,6 +89,9 @@ include("../functions/category_functions.php");
     </div>
 
     <script>
+    
+
+
         function ajax() {
             event.preventDefault();
 
@@ -106,6 +110,7 @@ include("../functions/category_functions.php");
                 if (result === "success") {
              
                     $('#exampleModalCenter').modal('show');
+                    window.location.href = "display_all_product.php";
                 } else {
                     alert("could not insert data");
                 }
