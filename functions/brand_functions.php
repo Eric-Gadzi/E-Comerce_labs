@@ -1,6 +1,6 @@
 <?php 
-    require("../admin/brand.php");
-    require("../controllers/product_controller.php");
+    require_once("../admin/brand.php");
+    require_once("../controllers/product_controller.php");
     
     function AdminButtons(){
         if(checkUserPrivileges()){

@@ -1,5 +1,5 @@
 <?php 
-    require("../classes/product_class.php");
+    require_once("../classes/product_class.php");
 
     function addProductBrand($brand_name){
         $product = new Product;
@@ -45,6 +45,12 @@
         $product = new Product;
 
         return $product->selectAllProducts();
+    }
+
+    function updateAProduct($category_id, $brand_id, $product_title, $product_price, $product_desc, $product_image, $product_keywords, $product_id){
+        $product = new Product;
+        
+        return $product->updateAProduct($category_id, $brand_id, $product_title, $product_price, $product_desc, $product_image, $product_keywords, $product_id);
     }
 
  

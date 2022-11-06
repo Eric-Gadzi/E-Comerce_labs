@@ -47,6 +47,14 @@
             return $this->db_fetch_all($sql);
         }
 
+        function updateAProduct($category_id, $brand_id, $product_title, $product_price, $product_desc, $product_image, $product_keywords, $product_id){
+
+        $sql = "UPDATE `products` SET `product_cat`='$category_id',`product_brand`='$brand_id',`product_title`='$product_title',`product_price`='$product_price',`product_desc`='$product_desc',`product_image`='$product_image',`product_keywords`='$product_keywords' WHERE product_id = $product_id";
+
+        return $this->db_query($sql);
+
+        }
+
         
     }
 
