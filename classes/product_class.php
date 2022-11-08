@@ -70,13 +70,12 @@ class Product extends db_connection
 
         return $this->db_query($sql);
     }
+
+    function searchProduct($product_name){
+        $sql = "SELECT products.product_id, product_title, product_price, product_desc, product_image, product_keywords,categories.cat_name, brands.brand_name, categories.cat_id, brands.brand_id FROM `products`, categories, brands WHERE products.product_cat = categories.cat_id and products.product_brand = brands.brand_id and product_title LIKE '%$product_name%'";
+        
+        return $this->db_fetch_all($sql);
+    }
 }
 
-    // $o = new Product;
-
-    // $o->editProductBrand(2, "lindaShops new");
-    // if($o){
-    //     echo "inserted";
-    // }else{
-    //     echo "some work has to be done";
-    // }
+ 

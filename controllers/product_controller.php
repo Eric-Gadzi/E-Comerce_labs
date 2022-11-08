@@ -59,6 +59,12 @@
         return $product->delete_product($product_id);
     }
 
+    function searchProduct($product_name){
+        $product = new Product;
+
+        return $product->searchProduct($product_name);
+    }
+
  
  
 ?>

@@ -33,13 +33,28 @@ require_once("../functions/category_functions.php");
                 <th scope="col">Category</th>
                 <th scope="col">Brand</th>
                 <th scope="col">Edit</th>
-                <th scope="col">Delete</th>
+                <th scope="col">View</th>
+                <th scope="col">Cart</th>
+
 
             </tr>
         </thead>
         <tbody>
+            <form>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" name = "product_name" placeholder="Product Name" aria-label="Product Name" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="submit" name = "search" id="button-addon2">Search</button>
+                </div>
+            </form>
 
-            <?php selectAllProducts_table(); ?>
+            
+            <?php
+                if(isset($_GET['search'])){
+                    searchAProduct($_GET['product_name']);
+                }else{
+                    selectAllProducts_table(); 
+                }
+            ?>
 
         </tbody>
     </table>
@@ -70,7 +85,7 @@ require_once("../functions/category_functions.php");
 
     <script>
         function ajax(value) {
-      
+
             event.preventDefault();
 
             var url = value;
@@ -80,9 +95,8 @@ require_once("../functions/category_functions.php");
 
             xhttp.onload = function() {
                 var result = this.responseText;
-          
-                if (result === 'success') {
 
+                if (result === 'success') {
                     alert("Product Delete successfully");
                     location.reload(true);
                 } else {
