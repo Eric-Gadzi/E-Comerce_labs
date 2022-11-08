@@ -15,10 +15,16 @@
 </head>
 
 <body>
+  <?php 
+    session_start();
 
-  <a class="btn btn-warning mb-3" href="../login/login.php" role="button">Sign in</a><br>
+    if(!isset($_SESSION['customer_id'])){
+      echo "<a class='btn btn-warning mb-3' href='../login/login.php' role='button'>Sign in</a><br>
 
-  <a class="btn btn-primary mb-3" href="../login/register.php" role="button">Sign Up</a><br>
+        <a class='btn btn-primary mb-3' href='../login/register.php' role='button'>Sign Up</a><br>";
+    }
+  ?>
+
 
   <!-- <a class="btn btn-success mb-3" href="#" role="button">Add Product</a><br> -->
 

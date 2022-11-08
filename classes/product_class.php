@@ -76,6 +76,15 @@ class Product extends db_connection
         
         return $this->db_fetch_all($sql);
     }
+
+    function addToCart($p_id, $ip_add, $c_id, $qty){
+        $sql = "INSERT INTO `cart`(`p_id`, `ip_add`, `c_id`, `qty`) VALUES ('$p_id','$ip_add','$c_id','$qty')";
+
+        return $this->db_query($sql);
+    }
+
+    
+
 }
 
  

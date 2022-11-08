@@ -65,6 +65,12 @@
         return $product->searchProduct($product_name);
     }
 
+    function addToCart($p_id, $ip_add, $c_id, $qty){
+        $product = new Product;
+
+        return $product->addToCart($p_id, $ip_add, $c_id, $qty);
+    }
+
  
  
 ?>

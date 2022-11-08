@@ -57,10 +57,7 @@ function display_product_row($counter, $product_name, $description, $price, $cat
 
                 <td><a href='single_product.php?name=$product_name&description=$description&price=$price&category_id=$category_id&brand_id=$brand_id&brand=$brand&category=$category&product_id=$product_id&keywords=$keywords&category_name=$category'  onclick = ''; class='btn btn-warning btn-sm active' role='button' aria-pressed='true'><i class='bi bi-eye-fill'>View</i></a></td>
  
-                <td><a href='../action/cart.php?name=$product_name&description=$description&price=$price&category_id=$category_id&brand_id=$brand_id&brand=$brand&category=$category&product_id=$product_id&keywords=$keywords&category_name=$category&brand=$brand'  onclick = ''; class='btn btn-success btn-sm active' role='button' aria-pressed='true'><i class='bi bi-cart-fill'></i>Cart</a></td>
-
-                
-                
+                <td><a href='add_cart.php?name=$product_name&description=$description&price=$price&category_id=$category_id&brand_id=$brand_id&brand=$brand&category=$category&product_id=$product_id&keywords=$keywords&category_name=$category&brand=$brand'  onclick = ''; class='btn btn-success btn-sm active' role='button' aria-pressed='true'><i class='bi bi-cart-fill'></i>Add To Cart</a></td>
                 
             </tr>";
 }
