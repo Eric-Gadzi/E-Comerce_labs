@@ -39,7 +39,7 @@ function brandTable()
 
 function display_row($brand_id, $brand_name)
 {
-    echo "<tr>$brand_name</tr><tr><a class='btn btn-primary mb-3' href='../view/edit_brand.php?brand_id=$brand_id&brand_name=$brand_name' role='button'>Edit Brand</a></tr><br>";
+    echo "<tr>$brand_name</tr><tr><a class='btn btn-primary mb-3' href='../View/edit_brand.php?brand_id=$brand_id&brand_name=$brand_name' role='button'>Edit Brand</a></tr><br>";
 }
 
 function brand_dropdown()

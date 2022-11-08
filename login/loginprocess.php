@@ -24,7 +24,7 @@
             $_SESSION['isLogin'] = true;
 
 
-            header("location: ../view/index.php");
+            header("location: ../View/index.php");
                 
            }else{
             echo "<script>

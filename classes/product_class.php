@@ -83,6 +83,12 @@ class Product extends db_connection
         return $this->db_query($sql);
     }
 
+    function getCartItems($c_id, $ip_add){
+        $sql = "SELECT * FROM `cart`  WHERE ip_add = '$ip_add' and c_id LIKE '%$c_id%'";
+
+        return $this->db_fetch_all($sql);
+    }
+
     
 
 }

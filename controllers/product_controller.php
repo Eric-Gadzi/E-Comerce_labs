@@ -71,6 +71,12 @@
         return $product->addToCart($p_id, $ip_add, $c_id, $qty);
     }
 
- 
+    function getCartItems($c_id, $ip_add){
+        $product = new Product;
+
+        return $product->getCartItems($c_id, $ip_add);
+    }
+
+   
  
 ?>

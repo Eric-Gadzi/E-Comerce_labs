@@ -34,15 +34,16 @@
       echo AdminButtons();
       
       display_add_product_btn();
+  ?>
+      
+  
+  <?php
 
       display_brands();
 
       display_category();
-
-      
-    
+         
   ?>
- 
 
   <!-- Modal Brand-->
   <div class="modal fade" id="addProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
