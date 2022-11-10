@@ -39,19 +39,19 @@ include("../functions/category_functions.php");
         <div class="mb-3">
             <label for="product_name" class="form-label">Product Name</label>
             <input type="text" value="<?php echo $product_title; ?>" class="form-control" name="name" id="product_name" aria-describedby="emailHelp" required>
-            <input type="hidden" value="<?php echo $product_id; ?>" class="form-control" name="product_id" id="product_id" aria-describedby="emailHelp" disabled required>
+            <input type="hidden" value="<?php echo $product_id; ?>" class="form-control" name="product_id" id="product_id" aria-describedby="emailHelp" readonly required>
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Product Description</label>
-            <input type="text" value="<?php echo $product_desc;?>" class="form-control" name="description" id="product_description" aria-describedby="emailHelp" disabled required>
+            <input type="text" value="<?php echo $product_desc;?>" class="form-control" name="description" id="product_description" aria-describedby="emailHelp" readonly required>
         </div>
         <div class="mb-3">
             <label for="product_keywords" class="form-label">Product Keywords</label>
-            <input type="text" class="form-control" value="<?php echo $keywords;?>" name="keywords" id="product_keywords" aria-describedby="emailHelp" disabled required>
+            <input type="text" class="form-control" value="<?php echo $keywords;?>" name="keywords" id="product_keywords" aria-describedby="emailHelp" readonly required>
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Price</label>
-            <input type="number" class="form-control" value="<?php echo $product_price;?>" name="price" id="price" aria-describedby="emailHelp" disabled required>
+            <input type="number" class="form-control" value="<?php echo $product_price;?>" name="price" id="price" aria-describedby="emailHelp" readonly required>
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Quantity</label>

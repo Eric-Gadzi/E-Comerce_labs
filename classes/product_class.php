@@ -77,6 +77,12 @@ class Product extends db_connection
         return $this->db_fetch_all($sql);
     }
 
+    function searchProductWithID($product_id){
+        $sql = "SELECT products.product_id, product_title, product_price, product_desc, product_image, product_keywords,categories.cat_name, brands.brand_name, categories.cat_id, brands.brand_id FROM `products`, categories, brands WHERE products.product_cat = categories.cat_id and products.product_brand = brands.brand_id and products.product_id = '$product_id'";
+        
+        return $this->db_fetch_all($sql);
+    }
+
     function addToCart($p_id, $ip_add, $c_id, $qty){
         $sql = "INSERT INTO `cart`(`p_id`, `ip_add`, `c_id`, `qty`) VALUES ('$p_id','$ip_add','$c_id','$qty')";
 
@@ -84,11 +90,22 @@ class Product extends db_connection
     }
 
     function getCartItems($c_id, $ip_add){
-        $sql = "SELECT * FROM `cart`  WHERE ip_add = '$ip_add' and c_id LIKE '%$c_id%'";
+        $sql = "SELECT * FROM `cart`  WHERE ip_add = '$ip_add' AND c_id = '$c_id'";
 
         return $this->db_fetch_all($sql);
     }
 
+    function countCartItems($c_id, $ip_add){
+        $sql = "SELECT COUNT(*) as count FROM `cart`  WHERE ip_add = '$ip_add' AND c_id = '$c_id'";
+        return $this->db_fetch_one($sql);
+    }
+
+    function delete_cart($c_id, $product_id, $ip_add){
+
+        $sql = "DELETE FROM `cart` WHERE c_id = $c_id and ip_add = '$ip_add' and p_id = $product_id ";
+
+        return $this->db_query($sql);
+    }
     
 
 }

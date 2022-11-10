@@ -85,7 +85,7 @@
 
                             <div class="form-group mb-3">
                                 <label for="customFile" class="form-label">Upload an Image</label>
-                                <input type="file" class="form-control" name = "user_image" id="user_image" placeholder="upload image" name = "image">
+                                <input type="file" class="form-control" accept="image/*" name = "user_image" id="user_image" placeholder="upload image" name = "image">
 
                             </div>
 

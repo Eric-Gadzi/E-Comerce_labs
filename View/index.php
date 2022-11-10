@@ -25,8 +25,8 @@
     }
   ?>
 
+    
 
-  <!-- <a class="btn btn-success mb-3" href="#" role="button">Add Product</a><br> -->
 
   <!-- Button trigger modal -->
   <?php 

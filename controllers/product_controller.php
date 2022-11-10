@@ -65,6 +65,11 @@
         return $product->searchProduct($product_name);
     }
 
+    function searchProductWithID($product_id){
+        $product = new Product;
+        return $product->searchProductWithID($product_id);
+    }
+
     function addToCart($p_id, $ip_add, $c_id, $qty){
         $product = new Product;
 
@@ -77,6 +82,17 @@
         return $product->getCartItems($c_id, $ip_add);
     }
 
+    function countCartItems($c_id, $ip_add){
+        $product = new Product;
+
+        return $product->countCartItems($c_id, $ip_add);
+    }
+
+    function delete_cart($c_id, $product_id, $ip_add){
+        $product = new Product;
+
+        return $product->delete_cart($c_id, $product_id, $ip_add);
+    }
    
  
 ?>
