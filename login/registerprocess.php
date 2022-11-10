@@ -11,10 +11,20 @@
         $country = $_POST['country'];
         $password = $_POST['password'];
         $user_role = '2';
-        $image = "./images/default_image.svg";
+        $image = "";
         $password = md5($password);
 
         $name = $fname." ".$lname;
+
+        $user_file_name = $_FILES['user_image']['name'];
+        $target_dir = "../images/customer/";
+        $full_dir = $target_dir.$user_file_name;
+        $image = "images/customer/".$user_file_name;
+        
+        move_uploaded_file($_FILES["user_image"]['tmp_name'], $full_dir);
+        
+
+        
 
         $testMail = testEmail($email);
         

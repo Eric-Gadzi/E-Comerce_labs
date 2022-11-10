@@ -23,7 +23,7 @@ require_once("../functions/category_functions.php");
     <h1>All Products</h1>
     <button type="submit" name="add_product" class="btn btn-primary" onclick="window.location.href= '../View/index.php';">Back To Home</button>
     <!-- Optional JavaScript; choose one of the two! -->
-    <table class="table">
+    <table d="dtBasicExample" `class`="table">
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -41,20 +41,29 @@ require_once("../functions/category_functions.php");
         </thead>
         <tbody>
             <form>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" name = "product_name" placeholder="Product Name" aria-label="Product Name" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary" type="submit" name = "search" id="button-addon2">Search</button>
+                <div `class`="input-group mb-3">
+                    <input type="text" class="form-control" name="product_name" placeholder="Product Name" aria-label="Product Name" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="submit" name="search" id="button-addon2">Search</button>
                 </div>
             </form>
 
-            
+
             <?php
-                if(isset($_GET['search'])){
-                    searchAProduct($_GET['product_name']);
-                }else{
-                    selectAllProducts_table(); 
-                }
+            if (isset($_GET['search'])) {
+                searchAProduct($_GET['product_name']);
+            } else {
+                selectAllProducts_table();
+            }
             ?>
+            <script>
+                // Basic example
+                $(document).ready(function() {
+                    $('#dtBasicExample').DataTable({
+                        "paging": true // false to disable pagination (or any other option)
+                    });
+                    $('.dataTables_length').addClass('bs-select');
+                });
+            </script>
 
         </tbody>
     </table>

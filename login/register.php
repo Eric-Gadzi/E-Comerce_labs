@@ -35,7 +35,7 @@
                         <h2 class="fw-bold mb-5">Sign Up</h2>
 
 
-                        <form method = "POST" action = "registerprocess.php">
+                        <form method = "POST" action = "registerprocess.php" enctype="multipart/form-data">
                             <!-- 2 column grid layout with text inputs for the first and last names -->
                             <div class="row">
                                 <div class="col-md-6 mb-3">
@@ -83,11 +83,11 @@
                                 <label for="floatingPassword">Password</label>
                             </div>
 
-                            <!-- <div class="form-group mb-3">
+                            <div class="form-group mb-3">
                                 <label for="customFile" class="form-label">Upload an Image</label>
-                                <input type="file" class="form-control" id="customFile" placeholder="upload image" name = "image">
+                                <input type="file" class="form-control" name = "user_image" id="user_image" placeholder="upload image" name = "image">
 
-                            </div> -->
+                            </div>
 
                             <!-- Submit button -->
                                 <div class="d-grid gap-2">
