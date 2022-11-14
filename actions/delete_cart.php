@@ -11,6 +11,7 @@
 
     if($result){
         echo "success";
+        header("location: ../View/cart.php");
     }else{
         echo "failed";
     }

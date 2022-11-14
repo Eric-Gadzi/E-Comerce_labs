@@ -4,6 +4,18 @@ require("../Settings/db_class.php");
 class Product extends db_connection
 {
 
+    function  increaseCartQauntity($c_id, $ip_address, $p_id){
+        $sql = "UPDATE `cart` SET `qty`= qty+1 WHERE c_id = '$c_id' and p_id = '$p_id' and ip_add = '$ip_address'";
+        
+        return $this->db_query($sql);
+    }
+
+    function  reduceCartQauntity($c_id, $ip_address, $p_id){
+        $sql = "UPDATE `cart` SET `qty`= qty-1 WHERE c_id = '$c_id' and p_id = '$p_id' and ip_add = '$ip_address'";
+        
+        return $this->db_query($sql);
+    }
+
     function addProductBrand($brand_name)
     {
         $sql = "INSERT INTO `brands`(`brand_name`) VALUES ('$brand_name')";

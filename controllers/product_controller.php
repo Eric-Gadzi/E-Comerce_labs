@@ -93,6 +93,20 @@
 
         return $product->delete_cart($c_id, $product_id, $ip_add);
     }
+
+    function  increaseCartQauntity($c_id, $ip_address, $p_id){
+        $product = new Product;
+
+        return $product-> increaseCartQauntity($c_id, $ip_address, $p_id);
+    }
+
+    function  reduceCartQauntity($c_id, $ip_address, $p_id){
+        $product = new Product;
+
+        return $product-> reduceCartQauntity($c_id, $ip_address, $p_id);
+    }
    
- 
+    
+
+    
 ?>

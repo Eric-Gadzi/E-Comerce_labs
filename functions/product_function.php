@@ -133,10 +133,14 @@ function displayCart_row($counter, $product_name, $description, $price, $categor
     <td>$brand</td>
     <th>$qty</th>
     <td>$amount</td>
-
+   
    
 
-    <td><a href='single_product.php?name=$product_name&description=$description&price=$price&category_id=$category_id&brand_id=$brand_id&brand=$brand&category=$category&product_id=$product_id&keywords=$keywords&category_name=$category'  onclick = ''; class='btn btn-warning btn-sm active' role='button' aria-pressed='true'><i class='bi bi-eye-fill'>View</i></a></td>
+     <td>
+    <a href='../actions/cart_update.php?product_id=$product_id&subbutton='  onclick = ''; class='btn btn-danger btn-sm active' role='button' aria-pressed='true'><i class='bi bi-eye-fill'>-</i></a>
+    
+    <a href='../actions/cart_update.php?product_id=$product_id&addbutton='  onclick = ''; class='btn btn-success btn-sm active' role='button' aria-pressed='true'><i class='bi bi-eye-fill'>+</i></a>
+    </td>
 
     <td><a href='../actions/delete_cart.php?name=$product_name&description=$description&price=$price&category_id=$category_id&brand_id=$brand_id&brand=$brand&category=$category&product_id=$product_id&keywords=$keywords' class='btn btn-danger btn-sm active' rosle='button' aria-pressed='true'><i class='bi bi-trash-fill'></i>Delete</a></td>
 

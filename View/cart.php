@@ -25,6 +25,7 @@
                 <th scope="col">Category</th>
                 <th scope="col">Brand</th>
                 <th scope="col">Quantity</th>
+                <!-- <th scope="col">Edit Quantity</th> -->
                 <th scope="col">Amount</th>
                 <th scope="col">Edit</th>
                 <th scope="col">View</th>
