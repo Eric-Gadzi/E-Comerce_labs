@@ -22,6 +22,7 @@
             $_SESSION['image'] = $userData['customer_image'];
             $_SESSION['name'] = $userData['customer_name'];
             $_SESSION['isLogin'] = true;
+            $_SESSION['user_email'] = $email;
 
 
             header("location: ../View/index.php");

@@ -106,21 +106,12 @@ function display_product_row($counter, $product_name, $description, $price, $cat
 
                 <td><a href='single_product.php?name=$product_name&description=$description&price=$price&category_id=$category_id&brand_id=$brand_id&brand=$brand&category=$category&product_id=$product_id&keywords=$keywords&category_name=$category'  onclick = ''; class='btn btn-warning btn-sm active' role='button' aria-pressed='true'><i class='bi bi-eye-fill'>View</i></a></td>
  
-                <td><a href='add_cart.php?name=$product_name&description=$description&price=$price&category_id=$category_id&brand_id=$brand_id&brand=$brand&category=$category&product_id=$product_id&keywords=$keywords&category_name=$category&brand=$brand'  onclick = ''; class='btn btn-success btn-sm active' role='button' aria-pressed='true'><i class='bi bi-cart-fill'></i>Add To Cart</a></td>
+                <td><a href='../actions/add_to_cart.php?name=$product_name&description=$description&price=$price&category_id=$category_id&brand_id=$brand_id&brand=$brand&category=$category&product_id=$product_id&keywords=$keywords&category_name=$category&brand=$brand'  onclick = ''; class='btn btn-success btn-sm active' role='button' aria-pressed='true'><i class='bi bi-cart-fill'></i>Add To Cart</a></td>
                 
             </tr>";
 }
 
-// <th scope="col">#</th>
-//                 <th scope="col">Product Name</th>
-//                 <th scope="col">Product Description</th>
-//                 <th scope="col">Product Price Per Unit(GHC)</th>
-//                 <th scope="col">Category</th>
-//                 <th scope="col">Brand</th>
-//                 <th scope="col">Quantity</th>
-//                 <th scope="col">Amount</th>
-//                 <th scope="col">Edit</th>
-//                 <th scope="col">View</th>
+
 
 function displayCart_row($counter, $product_name, $description, $price, $category, $brand, $brand_id, $category_id, $product_id, $keywords, $qty, $amount){
     echo " 
@@ -147,6 +138,7 @@ function displayCart_row($counter, $product_name, $description, $price, $categor
        
 </tr>";
 }
+
 
 
      //   delete Button

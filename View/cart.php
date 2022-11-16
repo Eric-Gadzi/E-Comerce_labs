@@ -48,6 +48,12 @@
     </table>
 
     <h1>Total: <?php echo $total ?></h1>
+    <?php 
+        if($total > 0){
+            echo "<a class='btn btn-warning' href='payment.php' role='button'>Check Out</a>
+            ";
+        }
+    ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -31,7 +31,7 @@ include("../functions/category_functions.php");
 </head>
 
 <body style="margin: 5% 40%;">
-    <h1>Edit Product</h1>
+    <h1></h1>
 
    
 

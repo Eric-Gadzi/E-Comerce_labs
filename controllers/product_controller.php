@@ -12,6 +12,13 @@
         return $product->editProductBrand($brand_id, $brand_name);
     }
 
+    function checkProductInCart($c_id, $ip_add, $p_id){
+        $product = new Product;
+        
+        return $product->checkProductInCart($c_id, $ip_add, $p_id);
+
+    }
+
     function selectAllBrands(){
         $product = new Product;
         return $product->selectAllBrands();
@@ -94,6 +101,12 @@
         return $product->delete_cart($c_id, $product_id, $ip_add);
     }
 
+    function deleteBrand($brand_id){
+        $product = new Product;
+
+        return $product->deleteBrand($brand_id);
+    }
+
     function  increaseCartQauntity($c_id, $ip_address, $p_id){
         $product = new Product;
 
@@ -106,7 +119,31 @@
         return $product-> reduceCartQauntity($c_id, $ip_address, $p_id);
     }
    
-    
+   
+    function addToPayment($amount, $customer_id, $order_id, $currency, $payment_date){
+        $product = new Product;
 
+        return $product->addToPayment($amount, $customer_id, $order_id, $currency, $payment_date);
+    }
+
+    function addToOrder($customer_id, $invoice_no, $order_date, $order_status){
+        $product = new Product;
+
+        return $product->addToOrder($customer_id, $invoice_no, $order_date, $order_status);
+    }
+
+    function getOrderID($result){
+        $product = new Product;
+
+        return $product->getOrderID($result);
+    }
+
+    function insertInOrderDetails($order_id, $product_id, $qty){
+        $product = new Product;
+
+        return $product->insertInOrderDetails($order_id, $product_id, $qty);
+    }
+
+    
     
 ?>

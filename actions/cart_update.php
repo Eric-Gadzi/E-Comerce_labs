@@ -10,11 +10,11 @@
     if(isset($_GET['addbutton'])){
         $p_id = $_GET['product_id'];
         increaseCartQauntity($c_id, $ip_address, $p_id);
-        header("location: ../view/cart.php");
+        header("location: ../View/cart.php");
     }else if(isset($_GET['subbutton'])){
         $p_id = $_GET['product_id'];
         reduceCartQauntity($c_id, $ip_address, $p_id);
-        header("location: ../view/cart.php");
+        header("location: ../View/cart.php");
     }
 
 ?>

@@ -5,23 +5,42 @@
 
         function display_category(){
             if(checkUserPrivileges()){
+                echo "<h1>Product Categories</h1>
+                <table class='table table-bordered  table-responsive'>
+                  <thead class='thead-inverse'>
+                    <tr>
+                      <th scope='col'>#</th>
+                      <th scope='col'>Category Name</th>
+                      <th scope='col'>Buttons</th>
+                    </tr>
+                  </thead>
+                  <tbody>";
                 categoryTable();
+                echo "
+                </tbody>
+              </table>
+            ";
             }
         }
     
     
         function categoryTable(){
             $categorys = selectAllCategory();
-            echo "<h4>category names</h4>";
+            $counter = 0;
             foreach($categorys as $category){
                 $category_id = $category['cat_id'];
                 $category_name = $category['cat_name'];
-                display_cat_row($category_id, $category_name);
+                display_cat_row(++$counter, $category_id, $category_name);
             }
         }
     
-        function display_cat_row($category_id, $category_name){
-            echo "<tr>$category_name</tr><tr><a class='btn btn-primary mb-3' href='../View/edit_category.php?category_id=$category_id&category_name=$category_name' role='button'>Edit category</a></tr><br>";
+        function display_cat_row($counter,$category_id, $category_name){
+            echo "
+            <tr>
+            <td scope='row'>$counter</td>
+            <td>$category_name</td>
+            <td><a class='btn btn-warning mb-3' href='../View/edit_category.php?category_id=$category_id&category_name=$category_name' role='button'>Edit category</a><a class='btn btn-danger mb-3' href='#' role='button'>Delete category</a></td>
+            </tr>";
         }
 
         function category_dropDown(){

@@ -2,6 +2,10 @@
 include("../functions/brand_functions.php");
 include("../functions/category_functions.php");
 
+require_once("../controllers/product_controller.php");
+
+// $count = checkProductInCart($c_id, $ip_add, $p_id);
+
 ?>
 <!doctype html>
 <html lang="en">

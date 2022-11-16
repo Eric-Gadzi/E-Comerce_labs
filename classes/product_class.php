@@ -10,6 +10,14 @@ class Product extends db_connection
         return $this->db_query($sql);
     }
 
+    function checkProductInCart($c_id, $ip_add, $p_id){
+        $sql = "SELECT * FROM `cart` WHERE p_id = '$p_id' and c_id = '$c_id' and ip_add = '$ip_add' ";
+
+        $this->db_fetch_all($sql);
+
+        return $this->db_count();
+    }
+
     function  reduceCartQauntity($c_id, $ip_address, $p_id){
         $sql = "UPDATE `cart` SET `qty`= qty-1 WHERE c_id = '$c_id' and p_id = '$p_id' and ip_add = '$ip_address'";
         
@@ -19,6 +27,12 @@ class Product extends db_connection
     function addProductBrand($brand_name)
     {
         $sql = "INSERT INTO `brands`(`brand_name`) VALUES ('$brand_name')";
+
+        return $this->db_query($sql);
+    }
+
+    function deleteBrand($brand_id){
+        $sql = "DELETE FROM `brands` WHERE `brand_id` = '$brand_id'";
 
         return $this->db_query($sql);
     }
@@ -118,6 +132,39 @@ class Product extends db_connection
 
         return $this->db_query($sql);
     }
+
+
+    // payment
+    function addToPayment($amount, $customer_id, $order_id, $currency, $payment_date){
+        $sql = "INSERT INTO `payment`(`amt`, `customer_id`, `order_id`, `currency`, `payment_date`) VALUES ('$amount','$customer_id','$order_id','$currency','$payment_date')";
+        
+        return $this->db_query($sql);
+    }
+
+
+    // order
+    function addToOrder($customer_id, $invoice_no, $order_date, $order_status){
+        $sql = "INSERT INTO `orders`(`customer_id`, `invoice_no`, `order_date`, `order_status`) VALUES ('$customer_id','$invoice_no','$order_date','$order_status')";
+         
+        $this->db_query($sql);
+
+        return mysqli_insert_id($this->db);
+
+    }
+
+    function getOrderID($result){
+        if($result){
+            $last_id = mysqli_insert_id($this->db);
+            return $last_id;
+          }
+    }
+
+    function insertInOrderDetails($order_id, $product_id, $qty){
+        $sql = "INSERT INTO `orderdetails`(`order_id`, `product_id`, `qty`) VALUES ('$order_id','$product_id','$qty')";
+
+        return $this->db_query($sql);
+    }
+    
     
 
 }

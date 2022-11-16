@@ -1,7 +1,7 @@
-<?php 
-  require("../functions/brand_functions.php");
-  require("../functions/category_functions.php");
-  require("../functions/product_function.php");
+<?php
+require("../functions/brand_functions.php");
+require("../functions/category_functions.php");
+require("../functions/product_function.php");
 
 ?>
 <!doctype html>
@@ -15,35 +15,40 @@
 </head>
 
 <body>
-  <?php 
-    session_start();
+  <?php
+  session_start();
 
-    if(!isset($_SESSION['customer_id'])){
-      echo "<a class='btn btn-warning mb-3' href='../login/login.php' role='button'>Sign in</a><br>
+  if (!isset($_SESSION['customer_id'])) {
+    echo "<a class='btn btn-warning mb-3' href='../login/login.php' role='button'>Sign in</a><br>
 
         <a class='btn btn-primary mb-3' href='../login/register.php' role='button'>Sign Up</a><br>";
-    }
+  }
   ?>
 
-    
+
 
 
   <!-- Button trigger modal -->
-  <?php 
-  
-      echo AdminButtons();
-      
-      display_add_product_btn();
-  ?>
-      
-  
   <?php
 
+  echo AdminButtons();
+
+  display_add_product_btn();
+  ?>
+
+
+      <?php
       display_brands();
+      ?>
+
+  
+      <?php
+
+
 
       display_category();
-         
-  ?>
+
+      ?>
 
   <!-- Modal Brand-->
   <div class="modal fade" id="addProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -65,7 +70,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" name = "add_brand" class="btn btn-success">Add Brand</button>
+          <button type="submit" name="add_brand" class="btn btn-success">Add Brand</button>
         </div>
         </form>
       </div>
@@ -73,8 +78,8 @@
   </div>
 
 
-    <!-- Modal Category-->
-    <div class="modal fade" id="addCategory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- Modal Category-->
+  <div class="modal fade" id="addCategory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -93,7 +98,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" name = "add_category" class="btn btn-success">Add Category</button>
+          <button type="submit" name="add_category" class="btn btn-success">Add Category</button>
         </div>
         </form>
       </div>

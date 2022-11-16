@@ -20,6 +20,7 @@ function AdminButtons()
 function display_brands()
 {
     if (checkUserPrivileges()) {
+
         brandTable();
     }
 }
@@ -29,17 +30,37 @@ function brandTable()
 {
     $brands = selectAllBrands();
     echo "<h4>Brand Names</h4>";
+    echo "  <table class='table table-striped table-inverse table-responsive'>
+    <thead class='thead-inverse'>
+      <tr>
+        <th scope='col'>#</th>
+        <th scope='col'>Brand Name</th>
+        <th scope='col'>Management</th>
+      </tr>
+    </thead>
+    <tbody>";
+    $counter = 0;
     foreach ($brands as $brand) {
         $brand_id = $brand['brand_id'];
         $brand_name = $brand['brand_name'];
-
-        display_row($brand_id, $brand_name);
+        $counter += 1;
+        display_row($counter, $brand_id, $brand_name);
     }
+    echo "
+    </tbody>
+  </table>
+";
 }
 
-function display_row($brand_id, $brand_name)
+function display_row($counter, $brand_id, $brand_name)
 {
-    echo "<tr>$brand_name</tr><tr><a class='btn btn-primary mb-3' href='../View/edit_brand.php?brand_id=$brand_id&brand_name=$brand_name' role='button'>Edit Brand</a></tr><br>";
+    echo "<tr>
+    <td scope='row'>$counter</td>
+    <td>$brand_name</td>
+    <td><a class='btn btn-warning mb-3' href='../View/edit_brand.php?brand_id=$brand_id&brand_name=$brand_name' role='button'>Edit Brand</a>
+    <a class='btn btn-danger mb-3' href='../actions/delete_brand.php?brand_id=$brand_id&brand_name=$brand_name' role='button'>Delete</a>
+    <td>
+    </tr>";
 }
 
 function brand_dropdown()
