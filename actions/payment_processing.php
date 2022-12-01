@@ -2,6 +2,7 @@
     require_once("../controllers/product_controller.php");
 
     session_start();
+    
     $customer_id = $_SESSION['customer_id'];
     $invoice_number = mt_rand();
     $order_date = date("Y-m-d");
@@ -46,6 +47,7 @@
 
     // move cart to orderdetails
     $ip_add = $_SERVER['REMOTE_ADDR'];
+    
     $cartlist = getCartItems($customer_id, $ip_add);
 
     foreach ($cartlist as $cart) {
